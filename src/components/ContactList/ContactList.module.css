@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.listItem {
+    align-items: center;
+    border: 1px solid black;
+    width: 300px;
+    border-radius: 5px;
+}

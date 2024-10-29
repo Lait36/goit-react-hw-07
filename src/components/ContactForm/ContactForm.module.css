@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  border: 1px solid black;
+  padding: 5px;
+  max-width: 300px;
+  flex-direction: column;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+.button {
+  cursor: pointer;
+  max-width: 100px;
+}
