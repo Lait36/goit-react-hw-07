@@ -1,7 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { nanoid } from "nanoid";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsSlice";
+import { addContact } from "../../redux/operations";
 import css from "./ContactForm.module.css";
 import * as Yup from "yup";
 
@@ -10,10 +9,8 @@ export default function ContactForm() {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    const id = nanoid();
     dispatch(
       addContact({
-        id: id,
         name: values.name,
         number: values.number,
       })
@@ -27,7 +24,7 @@ export default function ContactForm() {
       .max(30, "Maximum 30 letters")
       .required("This field is required"),
     number: Yup.string()
-      .matches(/^\d{3}-\d{2}-\d{2}$/, "Number must be in the format 111-11-11")
+      .matches(/^\d{3}-\d{3}-\d{4}$/, "Number must be in the format 111-111-1111")
       .required("This field is required"),
   });
 
